@@ -1,0 +1,22 @@
+{
+  "name": "snake-game",
+  "version": "1.0.0",
+  "description": "A simple snake game implemented in TypeScript.",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "lite-server"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.5.4",
+    "typescript": "^4.5.4"
+  },
+  "keywords": [
+    "snake",
+    "game",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC"
+}

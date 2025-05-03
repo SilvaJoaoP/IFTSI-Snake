@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    color: #4CAF50;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+canvas {
+    border: 2px solid #4CAF50;
+    background-color: #222;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.start-button {
+    display: block; 
+    margin: 20px auto 0 auto; 
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.start-button:active {
+    background-color: #3d8b40;
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+}
+
+.instructions {
+    display: block; 
+    margin: 20px auto 0 auto; 
+    padding: 10px;
+    background-color: rgba(76, 175, 80, 0.2);
+    border-radius: 5px;
+    max-width: 400px; 
+    box-sizing: border-box; 
+}
+
+p {
+    color: white;
+    margin: 5px 0;
+}
