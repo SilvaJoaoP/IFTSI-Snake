@@ -48,7 +48,11 @@ Para instalar e executar o projeto, siga os passos abaixo:
    npm run build
    ```
 
-4. Abra o arquivo `public/index.html` em um navegador para jogar.
+4. Abra o arquivo `index.html` em um navegador para jogar.
+
+   ```
+   npm start
+   ```
 
 ## Como Jogar
 
