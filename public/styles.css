@@ -1,80 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1e1e1e;
-    color: white;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVR4AWMAAv+BgICAMzMzAwMDw3+A4AAArAEBWjGpvQAAAABJRU5ErkJggg==') repeat;
+  opacity: 0.3;
+  z-index: 0;
 }
 
 .game-container {
-    text-align: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+}
+
+#score-display {
+  margin-bottom: 10px;
 }
 
 h1 {
-    color: #4CAF50;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
+  color: #4CAF50;
+  font-size: 2.2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 canvas {
-    border: 2px solid #4CAF50;
-    background-color: #222;
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  background: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 0 auto 15px;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .start-button {
-    display: block; 
-    margin: 20px auto 0 auto; 
-    padding: 12px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #4CAF50, #66BB6A);
+  color: #fff;
+  border: 2px solid #4CAF50;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  font-family: 'Press Start 2P', cursive;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .start-button:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(45deg, #66BB6A, #4CAF50);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .start-button:active {
-    background-color: #3d8b40;
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.mode-button {
+  padding: 10px 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin: 5px;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+}
+
+.easy-button {
+  background: linear-gradient(45deg, #4CAF50, #66BB6A);
+  border-color: #4CAF50;
+}
+
+.easy-button:hover {
+  background: linear-gradient(45deg, #66BB6A, #4CAF50);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.easy-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hard-button {
+  background: linear-gradient(45deg, #F44336, #EF5350);
+  border-color: #F44336;
+}
+
+.hard-button:hover {
+  background: linear-gradient(45deg, #EF5350, #F44336);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hard-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.pause-button {
+  padding: 10px 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin: 5px;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+}
+
+.resume-button {
+  background: linear-gradient(45deg, #4CAF50, #66BB6A);
+  border-color: #4CAF50;
+}
+
+.resume-button:hover {
+  background: linear-gradient(45deg, #66BB6A, #4CAF50);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.resume-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.change-mode-button {
+  background: linear-gradient(45deg, #FFC107, #FFD54F);
+  border-color: #FFC107;
+}
+
+.change-mode-button:hover {
+  background: linear-gradient(45deg, #FFD54F, #FFC107);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.change-mode-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .countdown {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-weight: bold;
+  color: #4CAF50;
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+  font-family: 'Press Start 2P', cursive;
 }
 
 .instructions {
-    display: block; 
-    margin: 20px auto 0 auto; 
-    padding: 10px;
-    background-color: rgba(76, 175, 80, 0.2);
-    border-radius: 5px;
-    max-width: 400px; 
-    box-sizing: border-box; 
+  margin: 15px auto 0;
+  padding: 10px;
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid #4CAF50;
+  border-radius: 8px;
+  max-width: 400px;
+  color: #e0e0e0;
+  font-family: 'Press Start 2P', cursive;
 }
 
 p {
-    color: white;
-    margin: 5px 0;
+  margin: 5px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
